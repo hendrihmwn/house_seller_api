@@ -1,0 +1,1 @@
+module.exports.housesLogic = require('./houses.logic');

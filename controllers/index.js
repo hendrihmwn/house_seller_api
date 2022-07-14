@@ -1,0 +1,1 @@
+module.exports.houseController = require('./house.controller');

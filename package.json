@@ -8,9 +8,19 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dot-env": "^0.0.1",
+    "dotenv": "^16.0.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "http-status": "^1.5.2",
+    "joi": "^17.6.0",
     "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11"
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7",
+    "pug": "2.0.0-beta11",
+    "sequelize": "^6.21.3"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
   }
 }
