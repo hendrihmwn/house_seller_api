@@ -1,5 +1,8 @@
 const express = require('express');
 const houseRoute = require('./houses');
+const locationRoute = require('./location');
+const typeRoute = require('./location');
+const statusRoute = require('./location');
 
 const router = express.Router();
 
@@ -7,6 +10,18 @@ const defaultRoutes = [
   {
     path: '/houses',
     route: houseRoute,
+  },
+  {
+    path: '/location',
+    route: locationRoute,
+  },
+  {
+    path: '/type',
+    route: typeRoute,
+  },
+  {
+    path: '/status',
+    route: statusRoute,
   },
   {
     path: '/',

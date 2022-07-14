@@ -30,7 +30,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       contact_name: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       price: {
         type: Sequelize.INTEGER

@@ -7,16 +7,19 @@ function relations(sequelize) {
 	} = sequelize.models;
 
 	houses.hasOne(master_location, {
-		foreignKey: 'location_id',
-		targetKey: 'id'
+		foreignKey: 'id',
+		targetKey: 'location_id',
+		as: 'location'
 	 });
 	 houses.hasOne(master_status, {
-		foreignKey: 'status_id',
-		targetKey: 'id'
+		foreignKey: 'id',
+		targetKey: 'status_id',
+		as: 'status'
 	 });
 	 houses.hasOne(master_type, {
-		foreignKey: 'type_id',
-		targetKey: 'id'
+		foreignKey: 'id',
+		targetKey: 'type_id',
+		as: 'type'
 	 });
 }
 

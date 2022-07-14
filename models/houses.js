@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
     room: DataTypes.INTEGER,
     bathroom: DataTypes.INTEGER,
     square: DataTypes.INTEGER,
-    contact_name: DataTypes.INTEGER,
+    contact_name: DataTypes.STRING,
     price: DataTypes.INTEGER
   }, {
     timestamps: false,

@@ -11,6 +11,24 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
+     await queryInterface.bulkInsert('master_statuses', 
+     [
+      {
+        name: 'Rent',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Buy',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Auction',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
+    ], {});
   },
 
   async down (queryInterface, Sequelize) {
@@ -20,5 +38,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
+     await queryInterface.bulkDelete('master_statuses', null, { truncate: true, cascade: true });
   }
 };

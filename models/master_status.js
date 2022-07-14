@@ -14,7 +14,7 @@ module.exports = (sequelize) => {
     underscored: true,
 
     freezeTableName: true,
-    tableName: 'master_status',
+    tableName: 'master_statuses',
   });
 
   return master_status;

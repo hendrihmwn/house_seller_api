@@ -1,4 +1,5 @@
 const { models } = require('../config/database');
+const Sequelize = require('sequelize');
 
 /**
  * Query for houses
@@ -9,10 +10,44 @@ const { models } = require('../config/database');
  * @returns {Promise<QueryResult>}
  */
 const queryHouse = async (filter, options) => {
+    filter_arr = [{name: {[Sequelize.Op.like]: '%'+filter.name+'%',}}]
+   
+    if(filter.location !== undefined){
+        filter_arr.push({ location_id: filter.location})
+    }
+    if(filter.type !== undefined){
+        filter_arr.push({ type_id: filter.type})
+    }
+    if(filter.status !== undefined){
+        filter_arr.push({ status_id: filter.status})
+    }
+
   const houses = await models.houses.findAll({
-    where:filter,
+    include: [
+        {
+            model: models.master_location, 
+            attributes: ['id','name'],
+            as: 'location'
+        },
+        {
+            model: models.master_type,  
+            attributes: ['id','name'],
+            as: 'type'
+        },
+        {
+            model: models.master_status, 
+            attributes: ['id','name'] ,
+            as: 'status'
+        },
+      ],
+    where:{
+        [Sequelize.Op.and] : filter_arr
+      },
     offset:options.page,
-    limit:options.limit
+    limit:options.limit,
+    order:[
+        ['id',options.sort]
+    ]
   });
   return houses;
 };

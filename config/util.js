@@ -28,7 +28,17 @@ class ApiError extends Error {
   const successTemplate = (data) => {
     return {
       status: true,
+      code: 200,
       data: data,
+    }
+  };
+
+  const failedTemplate = (code, message) => {
+    return {
+      status: false,
+      code: code,
+      data: [],
+      message: message,
     }
   };
 
@@ -36,6 +46,7 @@ class ApiError extends Error {
     ApiError,
     catchAsync,
     pick,
-    successTemplate
+    successTemplate,
+    failedTemplate
   };
   
