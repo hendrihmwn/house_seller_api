@@ -1,8 +1,8 @@
 const express = require('express');
 const houseRoute = require('./houses');
 const locationRoute = require('./location');
-const typeRoute = require('./location');
-const statusRoute = require('./location');
+const typeRoute = require('./type');
+const statusRoute = require('./status');
 
 const router = express.Router();
 

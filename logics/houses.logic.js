@@ -10,6 +10,8 @@ const Sequelize = require('sequelize');
  * @returns {Promise<QueryResult>}
  */
 const queryHouse = async (filter, options) => {
+    console.log(filter);
+    console.log(options);
     filter_arr = [{name: {[Sequelize.Op.like]: '%'+filter.name+'%',}}]
    
     if(filter.location !== undefined){

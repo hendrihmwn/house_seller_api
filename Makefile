@@ -8,3 +8,5 @@ seed_down :
 	npx sequelize-cli db:seed:undo:all --config "config.json" --env "development"
 npm_start :
 	npm run start
+npm_test :
+	npm run test
